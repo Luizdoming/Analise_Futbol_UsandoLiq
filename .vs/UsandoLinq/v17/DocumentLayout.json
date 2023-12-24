@@ -1,0 +1,78 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\System_Desenvolvidos\\UsandoLinq\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\entities\\brasileirao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:entities\\brasileirao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f37f5141-198e-4181-9582-7b026ee8f915}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmMain.cs",
+              "DocumentMoniker": "D:\\System_Desenvolvidos\\UsandoLinq\\FrmMain.cs",
+              "RelativeDocumentMoniker": "FrmMain.cs",
+              "ToolTip": "D:\\System_Desenvolvidos\\UsandoLinq\\FrmMain.cs",
+              "RelativeToolTip": "FrmMain.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAAFwBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-22T23:54:51.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Brasileirao.cs",
+              "DocumentMoniker": "D:\\System_Desenvolvidos\\UsandoLinq\\Entities\\Brasileirao.cs",
+              "RelativeDocumentMoniker": "Entities\\Brasileirao.cs",
+              "ToolTip": "D:\\System_Desenvolvidos\\UsandoLinq\\Entities\\Brasileirao.cs",
+              "RelativeToolTip": "Entities\\Brasileirao.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAYwGwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-22T22:32:34.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmMain.cs [Projeto]",
+              "DocumentMoniker": "D:\\System_Desenvolvidos\\UsandoLinq\\FrmMain.cs",
+              "RelativeDocumentMoniker": "FrmMain.cs",
+              "ToolTip": "D:\\System_Desenvolvidos\\UsandoLinq\\FrmMain.cs [Projeto]",
+              "RelativeToolTip": "FrmMain.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-22T22:31:16.968Z",
+              "EditorCaption": " [Projeto]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
