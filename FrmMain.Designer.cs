@@ -64,6 +64,11 @@
             Rb_JogosSemMarcar = new RadioButton();
             Rb_Estatisticas_Capeonato = new RadioButton();
             label2 = new Label();
+            lbl_totalJogosEquipe = new Label();
+            label3 = new Label();
+            Cbo_europa = new ComboBox();
+            Chk_brasil = new CheckBox();
+            Chk_Europa = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dgvDados_Brasil).BeginInit();
             PanelBra.SuspendLayout();
             SuspendLayout();
@@ -117,18 +122,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(13, 20);
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(818, 1);
             label1.Name = "label1";
-            label1.Size = new Size(159, 20);
+            label1.Size = new Size(136, 17);
             label1.TabIndex = 1;
             label1.Text = "Selecione uma Equipe";
             // 
             // cbo_Equipes_Brasil
             // 
             cbo_Equipes_Brasil.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cbo_Equipes_Brasil.ForeColor = SystemColors.GrayText;
             cbo_Equipes_Brasil.FormattingEnabled = true;
-            cbo_Equipes_Brasil.Location = new Point(15, 43);
+            cbo_Equipes_Brasil.Location = new Point(819, 21);
             cbo_Equipes_Brasil.Name = "cbo_Equipes_Brasil";
             cbo_Equipes_Brasil.Size = new Size(157, 28);
             cbo_Equipes_Brasil.TabIndex = 2;
@@ -370,7 +376,7 @@
             // 
             Rb_JogosCasa_BR.AutoSize = true;
             Rb_JogosCasa_BR.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Rb_JogosCasa_BR.Location = new Point(239, 20);
+            Rb_JogosCasa_BR.Location = new Point(14, 3);
             Rb_JogosCasa_BR.Name = "Rb_JogosCasa_BR";
             Rb_JogosCasa_BR.Size = new Size(93, 21);
             Rb_JogosCasa_BR.TabIndex = 4;
@@ -382,7 +388,7 @@
             // 
             Rb_JogosFora_Brasil.AutoSize = true;
             Rb_JogosFora_Brasil.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Rb_JogosFora_Brasil.Location = new Point(343, 20);
+            Rb_JogosFora_Brasil.Location = new Point(118, 3);
             Rb_JogosFora_Brasil.Name = "Rb_JogosFora_Brasil";
             Rb_JogosFora_Brasil.Size = new Size(92, 21);
             Rb_JogosFora_Brasil.TabIndex = 4;
@@ -394,7 +400,7 @@
             // 
             Rb_jogos_CantosHT.AutoSize = true;
             Rb_jogos_CantosHT.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Rb_jogos_CantosHT.Location = new Point(446, 20);
+            Rb_jogos_CantosHT.Location = new Point(221, 3);
             Rb_jogos_CantosHT.Name = "Rb_jogos_CantosHT";
             Rb_jogos_CantosHT.Size = new Size(89, 21);
             Rb_jogos_CantosHT.TabIndex = 4;
@@ -406,7 +412,7 @@
             // 
             Rb_golsHt.AutoSize = true;
             Rb_golsHt.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Rb_golsHt.Location = new Point(546, 20);
+            Rb_golsHt.Location = new Point(321, 3);
             Rb_golsHt.Name = "Rb_golsHt";
             Rb_golsHt.Size = new Size(73, 21);
             Rb_golsHt.TabIndex = 4;
@@ -418,7 +424,7 @@
             // 
             Rb_JogosSemMarcar.AutoSize = true;
             Rb_JogosSemMarcar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Rb_JogosSemMarcar.Location = new Point(630, 20);
+            Rb_JogosSemMarcar.Location = new Point(405, 3);
             Rb_JogosSemMarcar.Name = "Rb_JogosSemMarcar";
             Rb_JogosSemMarcar.Size = new Size(167, 21);
             Rb_JogosSemMarcar.TabIndex = 4;
@@ -430,7 +436,7 @@
             // 
             Rb_Estatisticas_Capeonato.AutoSize = true;
             Rb_Estatisticas_Capeonato.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Rb_Estatisticas_Capeonato.Location = new Point(808, 20);
+            Rb_Estatisticas_Capeonato.Location = new Point(583, 3);
             Rb_Estatisticas_Capeonato.Name = "Rb_Estatisticas_Capeonato";
             Rb_Estatisticas_Capeonato.Size = new Size(168, 21);
             Rb_Estatisticas_Capeonato.TabIndex = 4;
@@ -443,17 +449,75 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.GrayText;
             label2.Location = new Point(12, 706);
             label2.Name = "label2";
             label2.Size = new Size(314, 17);
             label2.TabIndex = 5;
             label2.Text = "Use a Tecla -  P  - Para Imprimir ou Gerar um PDF. ";
             // 
+            // lbl_totalJogosEquipe
+            // 
+            lbl_totalJogosEquipe.AutoSize = true;
+            lbl_totalJogosEquipe.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_totalJogosEquipe.ForeColor = SystemColors.GrayText;
+            lbl_totalJogosEquipe.Location = new Point(15, 80);
+            lbl_totalJogosEquipe.Name = "lbl_totalJogosEquipe";
+            lbl_totalJogosEquipe.Size = new Size(15, 20);
+            lbl_totalJogosEquipe.TabIndex = 6;
+            lbl_totalJogosEquipe.Text = "-";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(818, 49);
+            label3.Name = "label3";
+            label3.Size = new Size(120, 17);
+            label3.TabIndex = 1;
+            label3.Text = "Selecione uma Liga";
+            // 
+            // Cbo_europa
+            // 
+            Cbo_europa.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cbo_europa.ForeColor = SystemColors.GrayText;
+            Cbo_europa.FormattingEnabled = true;
+            Cbo_europa.Location = new Point(819, 69);
+            Cbo_europa.Name = "Cbo_europa";
+            Cbo_europa.Size = new Size(157, 28);
+            Cbo_europa.TabIndex = 2;
+            Cbo_europa.SelectedValueChanged += Cbo_europa_SelectedValueChanged;
+            // 
+            // Chk_brasil
+            // 
+            Chk_brasil.AutoSize = true;
+            Chk_brasil.Location = new Point(729, 53);
+            Chk_brasil.Name = "Chk_brasil";
+            Chk_brasil.Size = new Size(54, 19);
+            Chk_brasil.TabIndex = 7;
+            Chk_brasil.Text = "Brasil";
+            Chk_brasil.UseVisualStyleBackColor = true;
+            Chk_brasil.CheckedChanged += Chk_brasil_CheckedChanged;
+            // 
+            // Chk_Europa
+            // 
+            Chk_Europa.AutoSize = true;
+            Chk_Europa.Location = new Point(729, 78);
+            Chk_Europa.Name = "Chk_Europa";
+            Chk_Europa.Size = new Size(63, 19);
+            Chk_Europa.TabIndex = 7;
+            Chk_Europa.Text = "Europa";
+            Chk_Europa.UseVisualStyleBackColor = true;
+            Chk_Europa.CheckedChanged += Chk_Europa_CheckedChanged;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(992, 729);
+            Controls.Add(Chk_Europa);
+            Controls.Add(Chk_brasil);
+            Controls.Add(lbl_totalJogosEquipe);
             Controls.Add(label2);
             Controls.Add(Rb_Estatisticas_Capeonato);
             Controls.Add(Rb_JogosSemMarcar);
@@ -462,12 +526,15 @@
             Controls.Add(Rb_JogosFora_Brasil);
             Controls.Add(Rb_JogosCasa_BR);
             Controls.Add(PanelBra);
+            Controls.Add(Cbo_europa);
+            Controls.Add(label3);
             Controls.Add(cbo_Equipes_Brasil);
             Controls.Add(label1);
             Controls.Add(dgvDados_Brasil);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FrmMain";
+            Load += FrmMain_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDados_Brasil).EndInit();
             PanelBra.ResumeLayout(false);
             PanelBra.PerformLayout();
@@ -509,5 +576,10 @@
         private Label Lbl_MediaGol_Casa;
         private Label Lbl_Total_Gol_Casa;
         private Label label2;
+        private Label lbl_totalJogosEquipe;
+        private Label label3;
+        private ComboBox Cbo_europa;
+        private CheckBox Chk_brasil;
+        private CheckBox Chk_Europa;
     }
 }

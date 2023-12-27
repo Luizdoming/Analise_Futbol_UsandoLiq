@@ -71,8 +71,7 @@ namespace UsandoLinq.Entities
         {
             string path_Dinamica = Application.StartupPath + @"Files\Brasil.csv";
 
-            using (StreamReader sr = File.OpenText(path_Dinamica))
-            {
+            using StreamReader sr = File.OpenText(path_Dinamica);
                 while (!sr.EndOfStream)
                 {
                     string[] file = sr.ReadLine().Split(',');
@@ -99,7 +98,7 @@ namespace UsandoLinq.Entities
                     brasileirao.Add(new Brasileirao(season, data, home, away, golHome, golAway, result,
                            gols, cantosH, cantosA, escanteios, eHomeHt, eAwayHT, escanteiosHT, cartaoH, cartaoA, totalCartao, golHomeHT, golAwayHT, totalGolHT));
                 }
-            }
+            
         }
 
         public void AdcionarEquipesCombobox(ComboBox cbo)

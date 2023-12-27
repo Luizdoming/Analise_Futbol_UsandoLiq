@@ -43,6 +43,7 @@ D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\UsandoLinq.Generated
 D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\UsandoLinq.AssemblyInfoInputs.cache
 D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\UsandoLinq.AssemblyInfo.cs
 D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\UsandoLinq.csproj.CoreCompileInputs.cache
+D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\UsandoLinq.sourcelink.json
 D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\UsandoLinq.dll
 D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\refint\UsandoLinq.dll
 D:\System_Desenvolvidos\UsandoLinq\obj\Debug\net8.0-windows\UsandoLinq.pdb

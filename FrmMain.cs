@@ -7,7 +7,8 @@ namespace UsandoLinq
     public partial class FrmMain : Form
     {
         readonly Brasileirao brasil = new();
-        
+        readonly Europa europa = new();
+
         //Variavéis para manipulação das cordenadas do documento
         int x;
         int y;
@@ -22,9 +23,7 @@ namespace UsandoLinq
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = $"Seja Bem Vindo | Hoje é  {DateTime.Now.ToLongDateString()}"; 
-            brasil.AdcionarEquipesCombobox(cbo_Equipes_Brasil);
-            LimparControles();
+
         }
 
         private void SelecionarJogosBrasileirao()
@@ -41,7 +40,7 @@ namespace UsandoLinq
                                          Lbl_Media_Cantos_Fora, Lbl_Media_Cantos_Ht_Casa, Lbl_Media_Cantos_Ht_Fora,
                                          Lbl_Vitoria_Casa, Lbl_Vitoria_Fora, Lbl_total_Vitoria,
                                          Lbl_total_Derrota, Lbl_total_cartao, Lbl_media_cartao, Lbl_empate);
-                
+
                 return;
             }
 
@@ -57,7 +56,7 @@ namespace UsandoLinq
                                          Lbl_Media_Cantos_Fora, Lbl_Media_Cantos_Ht_Casa, Lbl_Media_Cantos_Ht_Fora,
                                          Lbl_Vitoria_Casa, Lbl_Vitoria_Fora, Lbl_total_Vitoria,
                                          Lbl_total_Derrota, Lbl_total_cartao, Lbl_media_cartao, Lbl_empate);
-               
+
                 return;
             }
 
@@ -101,6 +100,8 @@ namespace UsandoLinq
         private void Cbo_Equipes_Brasil_SelectedValueChanged(object sender, System.EventArgs e)
         {
             SelecionarJogosBrasileirao();
+            int totalJogos = dgvDados_Brasil.RowCount;
+            lbl_totalJogosEquipe.Text = $"A equipe do {equipe} Fez {totalJogos} jogos.";
         }
 
         private void Imprimir()
@@ -345,6 +346,80 @@ namespace UsandoLinq
         public void LimparControles()
         {
             foreach (Control c in PanelBra.Controls) { c.Text = string.Empty; };
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            this.Text = $"Seja Bem Vindo | Hoje é  {DateTime.Now.ToLongDateString()}";
+            LimparControles();
+        }
+
+        private void Chk_brasil_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.Chk_brasil.Checked)
+            {
+                this.Chk_Europa.Checked = false;
+                cbo_Equipes_Brasil.Items.Clear();
+                cbo_Equipes_Brasil.ResetText();
+                Cbo_europa.Items.Clear();
+                Cbo_europa.ResetText();
+                brasil.AdcionarEquipesCombobox(cbo_Equipes_Brasil);
+
+            }
+        }
+
+
+        private void Chk_Europa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.Chk_Europa.Checked)
+            {
+                this.Chk_brasil.Checked = false;
+                cbo_Equipes_Brasil.Items.Clear();
+                cbo_Equipes_Brasil.ResetText();
+                Cbo_europa.Items.Clear();
+                Cbo_europa.ResetText();
+                
+                // Comando usado para limpar todo conteudo de um dataGridView
+                // não existe um metodo Items.Clear() em um dataGridView
+                dgvDados_Brasil.Columns.Clear(); 
+                                                    
+                europa.AdcionarEquipesEuropaNaCombobox(Cbo_europa);
+            }
+        }
+
+
+        private void Cbo_europa_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string liga = null;
+
+            try
+            {
+                if (Cbo_europa.SelectedItem.ToString() != null)
+                {
+                    List<Europa> dados = new();
+                    europa.LerdadosEuropa(dados);
+
+                    liga = Cbo_europa.SelectedItem.ToString();
+                    var result = dados.Where(liga_ => liga_.Liga == liga).Select(e => e.Home).ToList();
+
+                    SortedSet<string> equipes = new();
+                    result.ForEach(e => equipes.Add(e));
+
+                    if (cbo_Equipes_Brasil.Items.Count > 0)
+                    {
+                        cbo_Equipes_Brasil.Items.Clear();
+                    }
+
+                    foreach (var equipe in equipes)
+                    {
+                        cbo_Equipes_Brasil.Items.Add(equipe);
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Você não selecionou uma liga\n" + erro.Message);
+            }
         }
 
     }//Fim Class

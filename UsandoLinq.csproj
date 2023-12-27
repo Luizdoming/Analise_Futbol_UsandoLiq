@@ -6,12 +6,17 @@
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Football-Manager-2009-1.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Files\**" />
     <EmbeddedResource Remove="Files\**" />
     <None Remove="Files\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Football-Manager-2009-1.ico" />
   </ItemGroup>
 
   <ItemGroup>
