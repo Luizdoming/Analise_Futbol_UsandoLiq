@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\System_Desenvolvidos\\UsandoLinq\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\entities\\brasileirao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:entities\\brasileirao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\entities\\europa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:entities\\europa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\entities\\brasileirao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:entities\\brasileirao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|d:\\system_desenvolvidos\\usandolinq\\entities\\europa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817A4871-AD68-4CC2-B823-FD0E585E1924}|UsandoLinq.csproj|solutionrelative:entities\\europa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -44,40 +44,40 @@
               "RelativeDocumentMoniker": "FrmMain.cs",
               "ToolTip": "D:\\System_Desenvolvidos\\UsandoLinq\\FrmMain.cs",
               "RelativeToolTip": "FrmMain.cs",
-              "ViewState": "AQIAAFkBAAAAAAAAAAAkwHwBAAAzAAAA",
+              "ViewState": "AQIAADIBAAAAAAAAAAA3wE4BAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-12-27T16:52:52.995Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Europa.cs",
               "DocumentMoniker": "D:\\System_Desenvolvidos\\UsandoLinq\\Entities\\Europa.cs",
               "RelativeDocumentMoniker": "Entities\\Europa.cs",
               "ToolTip": "D:\\System_Desenvolvidos\\UsandoLinq\\Entities\\Europa.cs",
               "RelativeToolTip": "Entities\\Europa.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAIBBwD4AAAAAAAAA",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAAwD8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-12-27T04:00:17.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Brasileirao.cs",
               "DocumentMoniker": "D:\\System_Desenvolvidos\\UsandoLinq\\Entities\\Brasileirao.cs",
               "RelativeDocumentMoniker": "Entities\\Brasileirao.cs",
               "ToolTip": "D:\\System_Desenvolvidos\\UsandoLinq\\Entities\\Brasileirao.cs",
               "RelativeToolTip": "Entities\\Brasileirao.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEUAAABBAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAABAwJsAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-12-22T22:32:34.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "FrmMain.cs [Projeto]",
               "DocumentMoniker": "D:\\System_Desenvolvidos\\UsandoLinq\\FrmMain.cs",
               "RelativeDocumentMoniker": "FrmMain.cs",

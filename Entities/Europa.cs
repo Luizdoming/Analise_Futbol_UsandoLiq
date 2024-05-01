@@ -60,7 +60,8 @@ namespace UsandoLinq.Entities
             TotalGolHT = totalGolHT;
         }
         #endregion
-
+        
+        
         public void LerdadosEuropa(List<Europa> europa)
         {
             string path_dinamica = Application.StartupPath + @"Files\Europa.csv";
@@ -111,5 +112,46 @@ namespace UsandoLinq.Entities
             };
 
         }
+
+        public void JogosCasa(string equipe, DataGridView dgvEuropa)
+        {
+            List<Europa> dados = new();
+            LerdadosEuropa(dados);
+
+            var result = dados.Where(j => j.Home == equipe.Trim())
+                .Select(j => new
+                {
+                    j.Data,
+                    j.Home,
+                    j.GolHome,
+                    j.GolAway,
+                    j.Away,
+                    j.TotalGols
+                })
+                .OrderByDescending(j => j.Data)
+                .ToList();
+            dgvEuropa.DataSource = result;
+        }
+
+        public void JogosFora(string equipe, DataGridView dgvEuropa)
+        {
+            //List<Europa> dados = new();// Aqui poderia usar a nova notação -> new() por []
+            List<Europa> dados = [];
+            LerdadosEuropa(dados);
+
+            var result = dados.Where(j => j.Away == equipe.Trim())
+                              .Select(j => new
+                              {
+                                  j.Data,
+                                  j.Home,
+                                  j.GolHome,
+                                  j.GolAway,
+                                  j.Away,
+                                  j.TotalGols
+                              })
+                              .OrderByDescending (j => j.Data)
+                              .ToArray();
+            dgvEuropa.DataSource = result;
+        } 
     }
 }

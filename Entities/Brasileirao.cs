@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UsandoLinq.Entities
+﻿namespace UsandoLinq.Entities
 {
     public class Brasileirao
     {
@@ -72,33 +65,33 @@ namespace UsandoLinq.Entities
             string path_Dinamica = Application.StartupPath + @"Files\Brasil.csv";
 
             using StreamReader sr = File.OpenText(path_Dinamica);
-                while (!sr.EndOfStream)
-                {
-                    string[] file = sr.ReadLine().Split(',');
-                    int season = Convert.ToInt32(file[0]);
-                    DateTime data = Convert.ToDateTime(file[1].ToString()).Date;
-                    string home = file[2];
-                    string away = file[3];
-                    int golHome = Convert.ToInt32(file[4]);
-                    int golAway = Convert.ToInt32(file[5]);
-                    string result = file[6];
-                    int gols = Convert.ToInt32(file[7]);
-                    int cantosH = Convert.ToInt32(file[8]);
-                    int cantosA = Convert.ToInt32(file[9]);
-                    int escanteios = Convert.ToInt32(file[10]); ;
-                    int eHomeHt = Convert.ToInt32(file[11]); ;
-                    int eAwayHT = Convert.ToInt32(file[12]); ;
-                    int escanteiosHT = Convert.ToInt32(file[13]); ;
-                    int cartaoH = Convert.ToInt32(file[14]); ;
-                    int cartaoA = Convert.ToInt32(file[15]); ;
-                    int totalCartao = Convert.ToInt32(file[16]); ;
-                    int golHomeHT = Convert.ToInt32(file[17]); ;
-                    int golAwayHT = Convert.ToInt32(file[18]); ;
-                    int totalGolHT = Convert.ToInt32(file[19]); ;
-                    brasileirao.Add(new Brasileirao(season, data, home, away, golHome, golAway, result,
-                           gols, cantosH, cantosA, escanteios, eHomeHt, eAwayHT, escanteiosHT, cartaoH, cartaoA, totalCartao, golHomeHT, golAwayHT, totalGolHT));
-                }
-            
+            while (!sr.EndOfStream)
+            {
+                string[] file = sr.ReadLine().Split(',');
+                int season = Convert.ToInt32(file[0]);
+                DateTime data = Convert.ToDateTime(file[1].ToString()).Date;
+                string home = file[2];
+                string away = file[3];
+                int golHome = Convert.ToInt32(file[4]);
+                int golAway = Convert.ToInt32(file[5]);
+                string result = file[6];
+                int gols = Convert.ToInt32(file[7]);
+                int cantosH = Convert.ToInt32(file[8]);
+                int cantosA = Convert.ToInt32(file[9]);
+                int escanteios = Convert.ToInt32(file[10]); ;
+                int eHomeHt = Convert.ToInt32(file[11]); ;
+                int eAwayHT = Convert.ToInt32(file[12]); ;
+                int escanteiosHT = Convert.ToInt32(file[13]); ;
+                int cartaoH = Convert.ToInt32(file[14]); ;
+                int cartaoA = Convert.ToInt32(file[15]); ;
+                int totalCartao = Convert.ToInt32(file[16]); ;
+                int golHomeHT = Convert.ToInt32(file[17]); ;
+                int golAwayHT = Convert.ToInt32(file[18]); ;
+                int totalGolHT = Convert.ToInt32(file[19]); ;
+                brasileirao.Add(new Brasileirao(season, data, home, away, golHome, golAway, result,
+                       gols, cantosH, cantosA, escanteios, eHomeHt, eAwayHT, escanteiosHT, cartaoH, cartaoA, totalCartao, golHomeHT, golAwayHT, totalGolHT));
+            }
+
         }
 
         public void AdcionarEquipesCombobox(ComboBox cbo)
@@ -121,7 +114,7 @@ namespace UsandoLinq.Entities
             List<Brasileirao> Jogos = new();
             LerDadosBrasil(Jogos);
 
-            int ano = DateTime.Now.Year;
+            int ano = DateTime.Now.Year - 1;
             var jogoscasa = Jogos.Where(j => j.Home == equipe && j.Season == ano)
                 .Select
                 (j => new
@@ -143,7 +136,7 @@ namespace UsandoLinq.Entities
             List<Brasileirao> Jogos = new();
             LerDadosBrasil(Jogos);
 
-            int ano = DateTime.Now.Year;
+            int ano = DateTime.Now.Year - 1;
             var jogosfora = Jogos.Where(j => j.Away == equipe && j.Data.Year == ano)
                 .Select
                 (j => new
@@ -253,10 +246,11 @@ namespace UsandoLinq.Entities
         {
             List<Brasileirao> jogos = new();
             LerDadosBrasil(jogos);
-            int ano = DateTime.Now.Year;
+            int ano = DateTime.Now.Year - 1;
 
             //calculando o total de gols da temporada atual
             var totalGolsNacompeticao = (from j in jogos where j.Data.Year == ano select j.Gols).Sum();
+            //int result1 = totalGolsNacompeticao;
             label[0].Text = $"Já foram marcados {totalGolsNacompeticao} gols na temporada atual";
 
             //Média de gols da competicao
@@ -307,7 +301,7 @@ namespace UsandoLinq.Entities
             {
                 List<Brasileirao> jogos = new();
                 LerDadosBrasil(jogos);
-                int ano = DateTime.Now.Year;
+                int ano = DateTime.Now.Year - 1;
 
                 var jogosComMaisdeTresEscanteioHt = jogos.Where(j => j.Home == equipe
                         && j.EscanteiosHT > 3 && j.Data.Year == ano
@@ -333,7 +327,7 @@ namespace UsandoLinq.Entities
         {
             List<Brasileirao> Jogos = new();
             LerDadosBrasil(Jogos);
-            int ano = DateTime.Now.Year;
+            int ano = DateTime.Now.Year - 1;
             var result = Jogos.Where(j => j.Home == equipe && j.TotalGolHT > 0 &&
                                      j.Data.Year == ano || j.Away == equipe
                                      && j.TotalGolHT > 0 && j.Data.Year == ano)
@@ -352,7 +346,7 @@ namespace UsandoLinq.Entities
         {
             List<Brasileirao> todosJogos = new();
             LerDadosBrasil(todosJogos);
-            int ano = DateTime.Now.Year;
+            int ano = DateTime.Now.Year - 1;
 
             var result = todosJogos.Where(j => j.Home == equipe && j.Data.Year == ano
                                    || j.Away == equipe && j.Data.Year == ano)
@@ -372,7 +366,7 @@ namespace UsandoLinq.Entities
         {
             List<Brasileirao> Jogos = new();
             LerDadosBrasil(Jogos);
-            int ano = DateTime.Now.Year;
+            int ano = DateTime.Now.Year - 1;
 
             var result = Jogos.Where(j => j.Home == equipe && j.GolHome < 1
                                     || j.Away == equipe && j.GolAway < 1)

@@ -77,7 +77,6 @@
             // 
             dgvDados_Brasil.AllowUserToAddRows = false;
             dgvDados_Brasil.AllowUserToDeleteRows = false;
-            dgvDados_Brasil.AllowUserToResizeColumns = false;
             dgvDados_Brasil.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dgvDados_Brasil.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -110,10 +109,8 @@
             dgvDados_Brasil.ReadOnly = true;
             dgvDados_Brasil.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvDados_Brasil.RowHeadersVisible = false;
-            dgvDados_Brasil.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvDados_Brasil.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDados_Brasil.ShowCellErrors = false;
-            dgvDados_Brasil.ShowCellToolTips = false;
             dgvDados_Brasil.ShowEditingIcon = false;
             dgvDados_Brasil.ShowRowErrors = false;
             dgvDados_Brasil.Size = new Size(575, 591);

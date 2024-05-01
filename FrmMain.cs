@@ -1,5 +1,7 @@
 using System.Drawing.Printing;
+
 using UsandoLinq.Entities;
+
 using static UsandoLinq.Entities.ImprimirResultados;
 
 namespace UsandoLinq
@@ -25,6 +27,33 @@ namespace UsandoLinq
             this.StartPosition = FormStartPosition.CenterScreen;
 
         }
+
+        public void SelecionarJogosEuropa()
+        {
+            try
+            {
+                //Exibir o resultado dos Jogos das equipes em casa
+                if (Chk_Europa.Checked && Cbo_europa.SelectedItem.ToString != null && cbo_Equipes_Brasil.SelectedItem.ToString() != null && Rb_JogosCasa_BR.Checked)
+                {
+                    equipe = cbo_Equipes_Brasil.SelectedItem.ToString();
+                    europa.JogosCasa(equipe, dgvDados_Brasil);
+                    return;
+                }
+
+                if (Chk_Europa.Checked && cbo_Equipes_Brasil.SelectedItem.ToString() != null && Cbo_europa.SelectedItem.ToString() != null && Rb_JogosFora_Brasil.Checked)
+                {
+                    equipe = cbo_Equipes_Brasil.SelectedItem.ToString();
+                    europa.JogosFora(equipe, dgvDados_Brasil);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione uma equipe, Marque a caixa de seleção Europa ou verifique...\n" + ex.Message);
+                return;
+            }
+        }
+
 
         private void SelecionarJogosBrasileirao()
         {
@@ -97,12 +126,26 @@ namespace UsandoLinq
 
         }
 
+
         private void Cbo_Equipes_Brasil_SelectedValueChanged(object sender, System.EventArgs e)
         {
-            SelecionarJogosBrasileirao();
-            int totalJogos = dgvDados_Brasil.RowCount;
-            lbl_totalJogosEquipe.Text = $"A equipe do {equipe} Fez {totalJogos} jogos.";
+            if (Chk_brasil.Checked)
+            {
+                SelecionarJogosBrasileirao();
+                int totalJogos = dgvDados_Brasil.RowCount;
+                lbl_totalJogosEquipe.Text = $"A equipe do {equipe} Fez {totalJogos} jogos.";
+                return;
+            }
+
+            if (Chk_Europa.Checked)
+            {
+                SelecionarJogosEuropa();
+                int totalJogos = dgvDados_Brasil.RowCount;
+                lbl_totalJogosEquipe.Text = $"A equipe do {equipe} Fez {totalJogos} jogos.";
+                return;
+            }
         }
+
 
         private void Imprimir()
         {
@@ -121,6 +164,7 @@ namespace UsandoLinq
             }
         }
 
+
         private void Btn_imprimir_Click(object sender, EventArgs e)
         {
             largura = print.DefaultPageSettings.Bounds.Width;
@@ -137,6 +181,7 @@ namespace UsandoLinq
                 print.Print();
             }
         }
+
 
         //Comando Para visualizar documento antes de imprimir
         private void VisualizarPrint()
@@ -156,6 +201,7 @@ namespace UsandoLinq
                 previewDialog.ShowDialog();
             }
         }
+
 
         private void Print_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -182,7 +228,8 @@ namespace UsandoLinq
             {
                 DadosParaImprimiR resultados = new()
                 {
-                    Data = row.Cells[0].Value.ToString().Substring(0, 10),
+                    //Data = row.Cells[0].Value.ToString().Substring(0, 10),
+                    Data = row.Cells[0].Value.ToString()[..10],
                     Home = row.Cells[1].Value.ToString().ToUpper(),
                     GolHome = Convert.ToInt32(row.Cells[2].Value.ToString()),
                     GolAway = Convert.ToInt32(row.Cells[3].Value.ToString()),
@@ -257,6 +304,7 @@ namespace UsandoLinq
 
         }
 
+
         private void Rb_Estatisticas_Capeonato_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -268,11 +316,14 @@ namespace UsandoLinq
                         c.Text = string.Empty;
                     }
 
-                    brasil.EstatisticaCompeticao(Lbl_Total_Gol_Casa, Lbl_MediaGol_Casa, Lbl_Total_Gol_Fora,
-                                                Lbl_Media_Gol_Fora, Lbl_Gol_Ht_Casa, Lbl_Media_Ht_Casa,
-                                                Lbl_Gol_Ht_Fora, Lbl_Media_Ht_Fora, Lbl_Media_Cantos_Casa,
-                                                Lbl_Media_Cantos_Fora, Lbl_Media_Cantos_Ht_Casa,
-                                                Lbl_Media_Cantos_Ht_Fora, Lbl_Vitoria_Casa, Lbl_Vitoria_Fora);
+                    brasil.EstatisticaCompeticao
+                    (
+                        Lbl_Total_Gol_Casa, Lbl_MediaGol_Casa, Lbl_Total_Gol_Fora,
+                        Lbl_Media_Gol_Fora, Lbl_Gol_Ht_Casa, Lbl_Media_Ht_Casa,
+                        Lbl_Gol_Ht_Fora, Lbl_Media_Ht_Fora, Lbl_Media_Cantos_Casa,
+                        Lbl_Media_Cantos_Fora, Lbl_Media_Cantos_Ht_Casa,
+                        Lbl_Media_Cantos_Ht_Fora, Lbl_Vitoria_Casa, Lbl_Vitoria_Fora
+                    );
                 }
             }
             catch (Exception err)
@@ -280,6 +331,7 @@ namespace UsandoLinq
                 MessageBox.Show("Erro ao buscar informações", "Aviso!" + err.Message);
             }
         }
+
 
         private void JogosComMaisDeTresCantosHt()
         {
@@ -298,6 +350,7 @@ namespace UsandoLinq
             }
         }
 
+
         private void JogosGolsHt()
         {
             try
@@ -313,6 +366,7 @@ namespace UsandoLinq
                 MessageBox.Show("Erro encontrado, verifique se selecionou uma equipe." + ex.Message, "Aviso"); ;
             }
         }
+
 
         //Comando usado para associar tecla de atalhos
         protected override bool ProcessCmdKey(ref Message msgb, Keys tecla)
@@ -336,6 +390,7 @@ namespace UsandoLinq
             return base.IsInputKey(tecla);
         }
 
+
         //private void Btn_Pdf_Click(object sender, EventArgs e)
         //{
         //    CreatePDF pdf = new();
@@ -343,16 +398,19 @@ namespace UsandoLinq
         //    pdf.CreateDocumentPDF();
         //}
 
+
         public void LimparControles()
         {
             foreach (Control c in PanelBra.Controls) { c.Text = string.Empty; };
         }
+
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.Text = $"Seja Bem Vindo | Hoje é  {DateTime.Now.ToLongDateString()}";
             LimparControles();
         }
+
 
         private void Chk_brasil_CheckedChanged(object sender, EventArgs e)
         {
@@ -378,11 +436,11 @@ namespace UsandoLinq
                 cbo_Equipes_Brasil.ResetText();
                 Cbo_europa.Items.Clear();
                 Cbo_europa.ResetText();
-                
+
                 // Comando usado para limpar todo conteudo de um dataGridView
                 // não existe um metodo Items.Clear() em um dataGridView
-                dgvDados_Brasil.Columns.Clear(); 
-                                                    
+                dgvDados_Brasil.Columns.Clear();
+
                 europa.AdcionarEquipesEuropaNaCombobox(Cbo_europa);
             }
         }
@@ -421,6 +479,7 @@ namespace UsandoLinq
                 MessageBox.Show("Você não selecionou uma liga\n" + erro.Message);
             }
         }
+
 
     }//Fim Class
 }//Fim NameSpace
