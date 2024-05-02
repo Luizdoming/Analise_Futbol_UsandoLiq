@@ -221,6 +221,7 @@ namespace UsandoLinq
                 LineAlignment = StringAlignment.Center
             };
 
+
             //Adcionando os registros da gridview em uma lista
             //----------------------------------------------------------------
             List<string> FilesR = new();   // Faz parte da class  record
@@ -248,6 +249,13 @@ namespace UsandoLinq
             }
 
             //Adcionando os dados
+
+            //foreach (var item in FilesR)
+            //{
+            //    e.Graphics.DrawString(item, letra, pincel, new Point(x, y));
+            //    y += 25;
+            //}
+
             for (int i = 0; i < FilesR.Count; i++)
             {
                 e.Graphics.DrawString(FilesR[i], letra, pincel, new Point(x, y));
